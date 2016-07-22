@@ -6,7 +6,8 @@ $container = new DependencyContainer();
 
 $global_scope_checker = true;
 
-$container->inject("test", function($arguments) {
+$container->inject("test", function($arguments)
+{
     return  [
         "depends" =>
           $arguments["sammy"] . $arguments[0] . $arguments[1]()  
@@ -18,7 +19,8 @@ $container->inject("test", function($arguments) {
     ]
 );
 
-$container->inject("test2", function($args) {
+$container->inject("test2", function($args)
+{
     global $global_scope_checker;
     $global_scope_checker = false;
     return true;
