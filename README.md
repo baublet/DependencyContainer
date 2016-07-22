@@ -41,5 +41,5 @@ I hope to fully test this code. Right now, it's tested using just the default PH
 
 ## TODO
 
-[] Exceptions
-[] Add CI
+* [ ] Exceptions
+* [ ] Add CI
