@@ -34,3 +34,12 @@ $dependencies = inject("my-dependency", function($args) {
 ```
 
 In the above code, `some/big/dependency/class.php` is only required and `SomeBigDependencyClass` is only initialized when you call `$dependencies->get("my-dependency");`.
+
+## Testing
+
+I hope to fully test this code. Right now, it's tested using just the default PHP `assert()` function, which works well enough for this small need.
+
+## TODO
+
+[] Exceptions
+[] Add CI
