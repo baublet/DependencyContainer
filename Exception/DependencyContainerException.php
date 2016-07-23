@@ -7,15 +7,4 @@ class DependencyContainerException implements Psr\Container\Exception\ContainerE
     {
         parent::__construct($message, $code, $previous);
     }
-
-    // custom string representation of object
-    public function __toString()
-    {
-        return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
-    }
-
-    public function customFunction()
-    {
-        echo "A custom function for this type of exception\n";
-    }
 }

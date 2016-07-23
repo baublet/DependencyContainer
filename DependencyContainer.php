@@ -5,6 +5,7 @@ require_once("Psr/Container/Exception/ContainerExceptionInterface.php");
 require_once("Psr/Container/Exception/NotFoundExceptionInterface.php");
 
 require_once("Exception/DependencyContainerException.php");
+require_once("Exception/DependencyContainerNotFoundException.php");
 
 class DependencyContainer implements Psr\Container\ContainerInterface {
     /**
@@ -40,9 +41,14 @@ class DependencyContainer implements Psr\Container\ContainerInterface {
         if(!isset($this->loaded_dependencies[$id])) {
             // If this dependency isn't yet loaded, try to load it
             if(!isset($this->functions[$id]) || !isset($this->arguments[$id])) {
-              // Throw an exception  
+              // Throw an exception DependencyContainerNotFoundException
+              throw new DependencyContainerNotFoundException("Dependency " . $id . " not found. Make sure it was properly injected in this domain");
             }
-            $this->loaded_dependencies[$id] = $this->functions[$id]($this->arguments[$id]);
+            try {
+                $this->loaded_dependencies[$id] = $this->functions[$id]($this->arguments[$id]);
+            } catch(Exception $exception) {
+                throw new DependencyContainerException("Error retrieving the entry: " . $id . "\nThrew an exception with the message: " . $exception->getMessage());
+            }
         }
         // If it's loaded or we just loaded it, cool. Return it!
         return $this->loaded_dependencies[$id];

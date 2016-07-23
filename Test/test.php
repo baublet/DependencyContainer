@@ -58,4 +58,15 @@ echo ".";
 assert($dep);
 echo ".";
 
+/**
+ * This test ensures that the proper NotFoundExceptions are thrown
+ */
+// TODO
+
+/**
+ * This test ensures that exceptions are thrown properly when our injectors throw
+ * errors.
+ */
+// TODO
+
 echo "\n\nTest suite complete! All tests pass.\n";
