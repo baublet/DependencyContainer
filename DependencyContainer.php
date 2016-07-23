@@ -42,12 +42,12 @@ class DependencyContainer implements Psr\Container\ContainerInterface {
             // If this dependency isn't yet loaded, try to load it
             if(!isset($this->functions[$id]) || !isset($this->arguments[$id])) {
               // Throw an exception DependencyContainerNotFoundException
-              throw new DependencyContainerNotFoundException("Dependency " . $id . " not found. Make sure it was properly injected in this domain");
+              throw new DependencyContainerNotFoundException($id);
             }
             try {
                 $this->loaded_dependencies[$id] = $this->functions[$id]($this->arguments[$id]);
             } catch(Exception $exception) {
-                throw new DependencyContainerException("Error retrieving the entry: " . $id . "\nThrew an exception with the message: " . $exception->getMessage());
+                throw new DependencyContainerException($id, $exception);
             }
         }
         // If it's loaded or we just loaded it, cool. Return it!

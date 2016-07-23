@@ -61,12 +61,30 @@ echo ".";
 /**
  * This test ensures that the proper NotFoundExceptions are thrown
  */
-// TODO
+try {
+    $container->get("not-here");
+} catch(Exception $ex) {
+    assert(is_a($ex, "Exception"));
+    echo ".";
+    assert(is_a($ex, "DependencyContainerNotFoundException"));
+    echo ".";
+}
 
 /**
  * This test ensures that exceptions are thrown properly when our injectors throw
  * errors.
  */
 // TODO
+$container->inject("fails", function() {
+    throw new Exception("nothing here");
+});
+try {
+    $container->get("fails");
+} catch (Exception $ex) {
+    assert(is_a($ex, "Exception"));
+    echo ".";
+    assert(is_a($ex, "DependencyContainerException"));
+    echo ".";
+}
 
 echo "\n\nTest suite complete! All tests pass.\n";

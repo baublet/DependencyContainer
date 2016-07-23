@@ -1,10 +1,11 @@
 <?php
 
-class DependencyContainerException implements Psr\Container\Exception\ContainerExceptionInterface
+class DependencyContainerException extends Exception implements Psr\Container\Exception\ContainerExceptionInterface
 {
     // Redefine the exception so message isn't optional
-    public function __construct($message, $code = 0, Exception $previous = null)
+    public function __construct($id, Exception $exception, $code = 0)
     {
-        parent::__construct($message, $code, $previous);
+        $message = "Error retrieving the entry: " . $id . "\nThrew an exception with the message: " . $exception->getMessage();
+        parent::__construct($message, $code, $exception);
     }
 }
