@@ -1,4 +1,7 @@
 # DependencyContainer 
+
+[![Build Status](https://travis-ci.org/baublet/DependencyContainer.svg?branch=master)](https://travis-ci.org/baublet/DependencyContainer)
+
 For simple dependency injection
 
 ## Why?
