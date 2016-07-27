@@ -37,9 +37,9 @@ In the above code, `some/big/dependency/class.php` is only required and `SomeBig
 
 ## Testing
 
-I hope to fully test this code. Right now, it's tested using just the default PHP `assert()` function, which works well enough for this small need.
+This code is tested using Travis CI and plain PHP assertions. No testing framework required. Just hope into the test directory and run the test:
 
-## TODO
-
-* [ ] Exceptions
-* [ ] Add CI
+```
+cd Test 
+php test.php
+```
