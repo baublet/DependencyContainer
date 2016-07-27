@@ -40,7 +40,7 @@ In the above code, `some/big/dependency/class.php` is only required and `SomeBig
 
 ## Testing
 
-This code is tested using Travis CI and plain PHP assertions. No testing framework required. Just hope into the test directory and run the test:
+This code is tested using Travis CI and plain PHP assertions. No testing framework required. Just hop into the test directory and run the test:
 
 ```
 cd Test 
