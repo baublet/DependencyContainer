@@ -1,6 +1,8 @@
 <?php
 
-require_once("../DependencyContainer.php");
+use DependencyContainer\DependencyContainer;
+
+require_once("../autoload.php");
 
 $container = new DependencyContainer();
 
@@ -66,7 +68,7 @@ try {
 } catch(Exception $ex) {
     assert(is_a($ex, "Exception"));
     echo ".";
-    assert(is_a($ex, "DependencyContainerNotFoundException"));
+    assert(is_a($ex, "DependencyContainer\Exception\DependencyContainerNotFoundException"));
     echo ".";
 }
 
@@ -76,14 +78,14 @@ try {
  */
 // TODO
 $container->inject("fails", function() {
-    throw new Exception("nothing here");
+    throw new \Exception("nothing here");
 });
 try {
     $container->get("fails");
 } catch (Exception $ex) {
     assert(is_a($ex, "Exception"));
     echo ".";
-    assert(is_a($ex, "DependencyContainerException"));
+    assert(is_a($ex, "DependencyContainer\Exception\DependencyContainerException"));
     echo ".";
 }
 

@@ -19,7 +19,10 @@ This means that the API for this is subject to change, so please read any docume
 I've tried to make the API fairly simple. First, require the container module and declare a new container.
 
 ```php
-require_once("path/to/DependencyContainer.php");
+use DependencyContainer\DependencyContainer;
+
+require_once("DependencyContainer/autoload.php");
+
 $dependencies = new DependencyContainer();
 ```
 
