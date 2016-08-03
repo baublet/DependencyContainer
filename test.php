@@ -2,7 +2,7 @@
 
 use DependencyContainer\DependencyContainer;
 
-require_once("../../autoload.php");
+require_once("autoload.php");
 
 $container = new DependencyContainer();
 
