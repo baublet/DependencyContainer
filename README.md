@@ -46,6 +46,5 @@ In the above code, `some/big/dependency/class.php` is only required and `SomeBig
 This code is tested using Travis CI and plain PHP assertions. No testing framework required. Just hop into the test directory and run the test:
 
 ```
-cd Test 
 php test.php
 ```
