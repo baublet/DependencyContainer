@@ -1,5 +1,5 @@
 <?php
-namespace DependencyContainer\Psr\Container\Exception;
+namespace baublet\DependencyContainer\Psr\Container\Exception;
 
 /**
  * No entry was found in the container.

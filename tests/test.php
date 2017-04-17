@@ -1,14 +1,15 @@
 <?php
 
-use DependencyContainer\DependencyContainer;
+use baublet\DependencyContainer\DependencyContainer;
 
-require_once("autoload.php");
+require_once('vendor/autoload.php');
+assert_options(ASSERT_BAIL, true);
 
 $container = new DependencyContainer();
 
 $global_scope_checker = true;
 
-$container->inject("test", function($arguments)
+$container->set("test", function($arguments)
 {
     return  [
         "depends" =>
@@ -21,7 +22,7 @@ $container->inject("test", function($arguments)
     ]
 );
 
-$container->inject("test2", function($args)
+$container->set("test2", function($args)
 {
     global $global_scope_checker;
     $global_scope_checker = false;
@@ -68,7 +69,7 @@ try {
 } catch(Exception $ex) {
     assert(is_a($ex, "Exception"));
     echo ".";
-    assert(is_a($ex, "DependencyContainer\Exception\DependencyContainerNotFoundException"));
+    assert(is_a($ex, "\baublet\DependencyContainer\Exception\DependencyContainerNotFoundException"));
     echo ".";
 }
 
@@ -76,8 +77,7 @@ try {
  * This test ensures that exceptions are thrown properly when our injectors throw
  * errors.
  */
-// TODO
-$container->inject("fails", function() {
+$container->set("fails", function() {
     throw new \Exception("nothing here");
 });
 try {
@@ -85,7 +85,7 @@ try {
 } catch (Exception $ex) {
     assert(is_a($ex, "Exception"));
     echo ".";
-    assert(is_a($ex, "DependencyContainer\Exception\DependencyContainerException"));
+    assert(is_a($ex, "\baublet\DependencyContainer\Exception\DependencyContainerException"));
     echo ".";
 }
 

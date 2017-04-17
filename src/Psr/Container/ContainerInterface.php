@@ -1,6 +1,6 @@
 <?php
 
-namespace DependencyContainer\Psr\Container;
+namespace baublet\DependencyContainer\Psr\Container;
 
 /**
  * Describes the interface of a container that exposes methods to read its entries.

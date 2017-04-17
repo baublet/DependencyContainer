@@ -1,8 +1,8 @@
 <?php
 
-namespace DependencyContainer\Exception;
+namespace baublet\DependencyContainer\Exception;
 
-class DependencyContainerNotFoundException extends \Exception implements \DependencyContainer\Psr\Container\Exception\NotFoundExceptionInterface
+class DependencyContainerNotFoundException extends \Exception implements \baublet\DependencyContainer\Psr\Container\Exception\NotFoundExceptionInterface
 {
     // Redefine the exception so message isn't optional
     public function __construct($id, $code = 0, \Exception $previous = null)

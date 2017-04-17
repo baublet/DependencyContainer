@@ -1,8 +1,8 @@
 <?php
 
-namespace DependencyContainer\Exception;
+namespace baublet\DependencyContainer\Exception;
 
-class DependencyContainerException extends \Exception implements \DependencyContainer\Psr\Container\Exception\ContainerExceptionInterface
+class DependencyContainerException extends \Exception implements \baublet\DependencyContainer\Psr\Container\Exception\ContainerExceptionInterface
 {
     // Redefine the exception so message isn't optional
     public function __construct($id, \Exception $exception, $code = 0)

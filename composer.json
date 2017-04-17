@@ -1,0 +1,19 @@
+{
+    "name": "baublet/dependency-container",
+    "description": "A simple, PSR-4 compliant dependency container.",
+    "license": "MIT",
+    "keywords": ["dependency", "dependency container", "service locator", "dependency management", "dependencies", "dependency injection"],
+    "authors": [
+        {
+            "name": "Ryan Poe",
+            "email": "baublet@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "baublet\\DependencyContainer\\": "src"
+        }
+    }
+}

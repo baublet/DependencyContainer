@@ -1,9 +1,9 @@
 <?php
 
-namespace DependencyContainer;
+namespace baublet\DependencyContainer;
 
-use DependencyContainer\Exception\DependencyContainerException;
-use DependencyContainer\Exception\DependencyContainerNotFoundException;
+use baublet\DependencyContainer\Exception\DependencyContainerException;
+use baublet\DependencyContainer\Exception\DependencyContainerNotFoundException;
 
 class DependencyContainer implements Psr\Container\ContainerInterface {
     /**
@@ -20,7 +20,7 @@ class DependencyContainer implements Psr\Container\ContainerInterface {
      *
      * @return void
      */
-    public function inject($id, $function, $arguments = false) {
+    public function set($id, $function, $arguments = false) {
         $this->functions[$id] = $function;
         $this->arguments[$id] = $arguments;
     }
@@ -75,9 +75,9 @@ class DependencyContainer implements Psr\Container\ContainerInterface {
     /**
      * Our arguments that will be passed to our functions when they are first called.
      */
-            $arguments = [],
+    $arguments = [],
     /**
      * Our loaded dependencies that are retrieved through get()
      */
-            $loaded_dependencies = [];
+    $loaded_dependencies = [];
 }
