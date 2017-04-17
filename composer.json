@@ -9,7 +9,9 @@
             "email": "baublet@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=5.4.0"
+    },
     "require-dev": {},
     "autoload": {
         "psr-4": {
