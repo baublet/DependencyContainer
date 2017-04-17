@@ -39,7 +39,7 @@ To declare a dependency:
 ```php
 $constructor = "This will be passed to the function as $args";
 
-$dependencies->inject("my-dependency", function($args) {
+$dependencies->set("my-dependency", function($args) {
     require_once("some/big/dependency/class.php");
     return new SomeBigDependencyClass($args);
 }, $constructor);
