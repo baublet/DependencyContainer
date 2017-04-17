@@ -14,6 +14,14 @@ It's PSR compliant, implementing the [(proposed) Container interfaces](https://g
 
 This means that the API for this is subject to change, so please read any documentation before upgrading.
 
+## Installation
+
+Add `baublet/dependency-container` to the required packages portion of your `composer.json` file, or, from the command line:
+
+```bash
+composer require baublet/dependency-container
+```
+
 ## Example
 
 I've tried to make the API fairly simple. First, require the container module and declare a new container.
